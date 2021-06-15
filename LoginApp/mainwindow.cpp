@@ -31,13 +31,15 @@ void MainWindow::on_pushButton_Login_clicked()
 
     if(username == "test" && password == "test") {
 //        QMessageBox::information(this, "Login", "Username and password is correct");
-        ui->statusbar->showMessage("Username and password is correct");
+//        ui->statusbar->showMessage("Username and password is correct");
+        ui->label_3->setText("Username and password is correct");
         hide();
         secDialog =new SecDialog(this);
         secDialog->show();
     } else {
 //        QMessageBox::warning(this, "Login", "Username and password is not correct");
-        ui->statusbar->showMessage("Username and password is not correct", 2000);
+//        ui->statusbar->showMessage("Username and password is not correct", 2000);
+        ui->label_3->setText("Username and password is not correct");
     }
 }
 
