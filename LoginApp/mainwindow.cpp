@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
     int w = ui->label_pic->width();
     int h = ui->label_pic->height();
     ui->label_pic->setPixmap(pix.scaled(w,h,Qt::KeepAspectRatio));
+    ui->statusbar->addPermanentWidget(ui->label_3, 1);
+    ui->statusbar->addPermanentWidget(ui->progressBar, 3);
 }
 
 MainWindow::~MainWindow()
@@ -29,11 +31,13 @@ void MainWindow::on_pushButton_Login_clicked()
 
     if(username == "test" && password == "test") {
 //        QMessageBox::information(this, "Login", "Username and password is correct");
+        ui->statusbar->showMessage("Username and password is correct");
         hide();
         secDialog =new SecDialog(this);
         secDialog->show();
     } else {
-        QMessageBox::warning(this, "Login", "Username and password is not correct");
+//        QMessageBox::warning(this, "Login", "Username and password is not correct");
+        ui->statusbar->showMessage("Username and password is not correct", 2000);
     }
 }
 
