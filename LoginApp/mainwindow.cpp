@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QPixmap pix("D:/code/qt/qt-hello-world/images/ad.png");
+    QPixmap pix(":/resources/img/login-icon.png");
 //    ui->label_pic->setPixmap(pix.scaled(100,100,Qt::KeepAspectRatio));
 
     int w = ui->label_pic->width();
